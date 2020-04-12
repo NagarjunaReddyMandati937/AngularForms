@@ -1,0 +1,24 @@
+<div class="container" align="center">
+    <h3>Enter your Login Credentials, to Login</h3><br><br>
+    <div class="row">
+        <form id="loginForm" [formGroup]=loginForm (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <input type="email" placeholder="Email" formControlName="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required minlength="4" formControlName="password"
+                    class="form-control">
+
+            </div>
+            <div class="form-group">
+                <a href="#" routerLink="/forgotpassword" routerLinkActive="active">Forgot Password</a>
+
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" routerLink="/welcome" (click)="onLogin()" [disabled]="loginForm.invalid">Login</button>
+            </div>
+
+        </form>
+    </div>
+</div>
